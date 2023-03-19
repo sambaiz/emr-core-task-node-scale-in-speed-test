@@ -1,14 +1,13 @@
-# Welcome to your CDK TypeScript project
+## emr-core-task-node-scale-in-speed-test
 
-This is a blank project for CDK development with TypeScript.
+```sh
+$ npm run build
+$ npm run cdk -- deploy
+$ export CLUSTER_ID=<CLUSTER_ID>
+$ sh run-spark-apps.sh 
+```
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+### Article
 
-## Useful commands
-
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+- ja: [Task nodes で EMR クラスタのスケールインを高速化する - sambaiz-net](https://sambaiz.net/article/445/)
+- en: [Make EMR clusters' scale-in faster with Task nodes - sambaiz-net](https://sambaiz.net/en/article/445/)
