@@ -41,7 +41,7 @@ export class EmrCoreTaskNodeStack extends cdk.Stack {
           ],
         },
         coreInstanceFleet: {
-          targetOnDemandCapacity: 2,
+          targetOnDemandCapacity: 1,
           instanceTypeConfigs: [
             {
               instanceType: 'm6g.xlarge',
@@ -50,19 +50,12 @@ export class EmrCoreTaskNodeStack extends cdk.Stack {
         },
         taskInstanceFleets: [{
           name: 'Task nodes',
-          targetSpotCapacity: 1,
+          targetOnDemandCapacity: 1,
           instanceTypeConfigs: [
             {
               instanceType: 'm6g.xlarge',
-              bidPriceAsPercentageOfOnDemandPrice: 100,
             },
           ],
-          launchSpecifications: {
-            spotSpecification: {
-              timeoutAction: 'SWITCH_TO_ON_DEMAND',
-              timeoutDurationMinutes: 5,
-            },
-          },
         }],
       },
       bootstrapActions: [
@@ -77,7 +70,7 @@ export class EmrCoreTaskNodeStack extends cdk.Stack {
       managedScalingPolicy: {
         computeLimits: {
           maximumCapacityUnits: 10,
-          maximumCoreCapacityUnits: 2,
+          maximumCoreCapacityUnits: 1,
           minimumCapacityUnits: 2,
           unitType: 'InstanceFleetUnits',
         },
